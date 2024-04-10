@@ -4,6 +4,23 @@ tabla debe ser realizada con una función y mostrar
 solo los resultados del 1 al 10 del número elegido por
 el usuario. */
 
-function name(params) {
-    
-}
+function tablaMultiplicar(numero) {
+    if (isNaN(numero)) {
+      alert("El valor ingresado no es un numero");
+      return;
+    }
+  
+    for (let i = 1; i <= 10; i++) {
+      const producto = numero * i;
+  
+      document.write(`${numero} x ${i} = ${producto}</br>`);
+    }
+  }
+  
+  let numero;
+  do {
+    numero = parseInt(prompt("Ingrese un número: "));
+  } while (isNaN(numero));
+  
+  document.write(`<h1>La tabla de multiplicar del ${numero} es la siguiente</h1>`);
+  tablaMultiplicar(numero);

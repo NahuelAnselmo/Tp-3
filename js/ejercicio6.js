@@ -3,17 +3,24 @@ valor de los lados de un rectángulo, luego crear una
 función para calcular su perímetro y mostrarlo por 
 pantalla. */
 
-function calcularPerimetro(lado1, lado2) {
+function calcularPerimetro(ladoA, ladoB) {
     
-    let perimetro = 0;
-    perimetro = 2 * (lado1 + lado2);
-
+    const perimetro = 2 * (ladoA + ladoB);
     return perimetro;
-}
+  }
+  
+  let ladoA;
+  let ladoB;
+  
+  do {
+    ladoA = parseInt(prompt("Ingrese el valor del lado A del rectangulo:"));
+    ladoB = parseInt(prompt("Ingrese el valor del lado B del rectangulo:"));
 
-let lado1 = parseFloat(prompt("ingresa el primer valor del rectangulo"));
-let lado2 = parseFloat(prompt("ingresa el segundo valor del rectangulo"));
-
-resultado = calcularPerimetro(lado1, lado2);
-
-document.write("El perimetro del rectangulo es: ", resultado);
+    if (isNaN(ladoA) || isNaN(ladoB) || ladoA <= 0 || ladoB <= 0) {
+        alert("No se puede ingresar letras ni numeros negativos.");
+    }
+  } while (isNaN(ladoA) || isNaN(ladoB) || ladoA <= 0 || ladoB <= 0);
+  
+let resultado = calcularPerimetro(ladoA, ladoB);
+ 
+alert(`El perimetro del rectangulo con lado A = ${ladoA} y lado B = ${ladoB}, es igual a  ${resultado}`);
